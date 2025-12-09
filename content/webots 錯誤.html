@@ -142,24 +142,46 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content"> <a href='練習.html'>Next</a> >> 練習<br /><h1>Homework</h1>
-<p>HW1:</p>
-<p>利用 NX2312、<a href="https://www.onshape.com/en/">Onshape</a>、Solvespace 或自選 CAD 套件繪製五連桿機構零組件。</p>
-<p>參考資料: <a href="https://mde.tw/cad2025/downloads/plotter.7z">plotter.7z</a> (in Solvespace)</p>
-<p>利用 NX2312、<a href="https://www.onshape.com/en/">Onshape</a>、Solvespace 或自選 CAD 套件繪製 Openduck mini 系統零組件。</p>
-<p>HW2:</p>
-<p>Webots 五連桿 plotter 機構模擬，可讀取任何 png 圖檔，利用 plotter 在其工作範圍完成外圍輪廓線條繪圖。</p>
-<p><img alt="" height="300" src="https://mde.tw/cad2025/images/mickey_mouse_plot.gif" width="300"/></p>
-<p>參考資料: <a href="https://mde.tw/cad2025/downloads/plotter.7z">plotter.7z</a> (in Solvespace)</p>
-<p><img alt="" height="300" src="https://mde.tw/cad2025/images/5bar_simulation.gif" width="300"/></p>
-<p><img caption="false" height="348" src="https://mde.tw/cad2025/images/fivebar_plotter.gif" width="500"/></p>
-<p><a href="https://mde.tw/cad2025/downloads/plotter_project.7z">plotter_project.7z</a></p>
-<p>Webots Openduck mini 系統動態模擬。</p>
-<p>參考資料: <a href="https://mde.tw/cad2025/content/OpenDuck.html">Openduck mini</a> </p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" data-mce-fragment="1" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/-cfIm06tcfA?si=NUajq0qNFOImgAbc" title="YouTube video player" width="560"></iframe></p>
-<p>HW3:</p>
-<p>五連桿 plotter 與 Openduck mini 機電系統實作規劃。</p>
-<br /> <a href='練習.html'>Next</a> >> 練習</div>
+    <div id="tipue_search_content">五連桿 plotter << <a href='五連桿 plotter.html'>Previous</a> <br /><h1>webots 錯誤</h1>
+<p><strong><br/></strong>Driver Version: R580 U5 (581.80) | WHQL<br/>Release Date: Tue Nov 04, 2025<br/>Operating System: Windows 10 64-bit,<br/>Windows 11<br/>Language: Chinese (Traditional)<br/>File Size: 712.77 MB<br/>By clicking the "Download" button, you are confirming that you have read and agree to be bound by the License For Customer Use of NVIDIA Software for use of the driver. The driver will begin downloading immediately after clicking on the "Download" button. NVIDIA recommends users update to the latest driver version.<br/><br/></p>
+<p data-end="540" data-start="518"><strong data-end="540" data-start="521">1. OpenGL 初始化失敗</strong></p>
+<ul data-end="646" data-start="541">
+<li data-end="586" data-start="541">
+<p data-end="586" data-start="543">Webots 嘗試載入 OpenGL 軟體渲染 (<code data-end="580" data-start="568">opengl32sw</code>) 失敗</p>
+</li>
+<li data-end="646" data-start="587">
+<p data-end="646" data-start="589">系統無法解析 WGL / OpenGL 函數<br data-end="614" data-start="611"/> → <strong data-end="646" data-start="616">代表你的電腦目前 OpenGL 功能無法使用或被禁用</strong></p>
+</li>
+</ul>
+<hr data-end="651" data-start="648"/>
+<p data-end="677" data-start="653"><strong data-end="677" data-start="656">2. 渲染系統無法啟動（關鍵錯誤）</strong></p>
+<ul data-end="720" data-start="678">
+<li data-end="720" data-start="678">
+<p data-end="720" data-start="680">Webots 無法建立 OpenGL 渲染環境<br data-end="706" data-start="703"/> → <strong data-end="720" data-start="708">程式啟動直接中斷</strong></p>
+</li>
+</ul>
+<hr data-end="725" data-start="722"/>
+<p data-end="743" data-start="727"><strong data-end="743" data-start="730">3. 系統建議原因</strong></p>
+<ul data-end="806" data-start="744">
+<li data-end="757" data-start="744">
+<p data-end="757" data-start="746">檢查 GPU 能力</p>
+</li>
+<li data-end="771" data-start="758">
+<p data-end="771" data-start="760">安裝最新顯示卡驅動</p>
+</li>
+<li data-end="806" data-start="772">
+<p data-end="806" data-start="774">確認顯示卡符合 Webots 的最低需求（OpenGL 4.1）</p>
+</li>
+</ul>
+<hr data-end="811" data-start="808"/>
+<p data-end="827" data-start="813"><strong data-end="827" data-start="816">4. 次要錯誤</strong></p>
+<div class="sticky top-9">
+<div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+<div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"></div>
+</div>
+</div>
+<div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-symbol">QWaitCondition:</span></span><span> Destroyed </span><span><span class="hljs-keyword">while</span></span><span> threads are still waiting </span></span></code></div>
+<p data-end="936" data-start="894">→ 因為渲染系統沒啟動，背景執行緒被強制終止<br data-end="919" data-start="916"/> → <strong data-end="936" data-start="921">屬於連帶錯誤，不是主因</strong></p><br />五連桿 plotter << <a href='五連桿 plotter.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">
