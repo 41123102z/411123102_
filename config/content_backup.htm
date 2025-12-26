@@ -160,4 +160,31 @@
 <h1 data-end="936" data-start="894">期末</h1>
 <h2>第一個連桿</h2>
 <p>失敗:<a href="/cad2025 期末第一連桿(失敗">https://youtu.be/DbmewXZmEXs</a></p>
-<p>測試github同步與否</p>
+<h1>github無法推上雲端</h1>
+<p>On branch main<br/>Your branch is ahead of 'origin/main' by 3 commits.<br/>  (use "git push" to publish your local commits)</p>
+<p>nothing to commit, working tree clean</p>
+<p>Enumerating objects: 58, done.<br/>Counting objects: 100% (58/58), done.<br/>Delta compression using up to 2 threads<br/>Compressing objects: 100% (43/43), done.<br/>Writing objects: 100% (44/44), 212.13 MiB | 17.84 MiB/s, done.<br/>Total 44 (delta 33), reused 1 (delta 0), pack-reused 0 (from 0)<br/>remote: Resolving deltas: 100% (33/33), completed with 8 local objects.<br/>remote: error: Trace: 348284a55fb38ff3b509b44e02d5f119735e8d48045b137e983a661973232aa2<br/>remote: error: See https://gh.io/lfs for more information.<br/>remote: error: File downloads/螢幕錄製 2025-12-26 200338.mp4 is 1223.55 MB; this exceeds GitHub's file size limit of 100.00 MB<br/>remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.<br/>To https://github.com/41123102z/411123102_<br/> ! [remote rejected] main -&gt; main (pre-receive hook declined)<br/>error: failed to push some refs to 'https://github.com/41123102z/411123102_'</p>
+<p>出現原因:<b data-index-in-node="11" data-path-to-node="0">GitHub 限制單一檔案大小不能超過 100.00 MB</b>，而你的檔案 <code data-index-in-node="47" data-path-to-node="0">downloads/螢幕錄製 2025-12-26 200338.mp4</code> 高達 <b data-index-in-node="87" data-path-to-node="0">1.22 GB</b>。Git 拒絕了推送</p>
+<p data-path-to-node="7"><strong>1.撤銷最近的 3 個提交（保留檔案內容）</strong></p>
+<div _ngcontent-ng-c3121828532="" class="code-block ng-tns-c3121828532-81 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation" data-hveid="0" data-ved="0CAAQhtANahgKEwiqg-W8uduRAxUAAAAAHQAAAAAQtwE" decode-data-ved="1" jslog='223238;track:impression,attention;BardVeMetadataKey:[["r_2f4d360bd96ba503","c_b9a7ab9335adfa33",null,"rc_3a865f534414250f",null,null,"zh-Hant",null,1,null,null,1,0]]'>
+<div _ngcontent-ng-c3121828532="" class="formatted-code-block-internal-container ng-tns-c3121828532-81">
+<div _ngcontent-ng-c3121828532="" class="animated-opacity ng-tns-c3121828532-81">
+<p class="ng-tns-c3121828532-81"><code _ngcontent-ng-c3121828532="" class="code-container formatted ng-tns-c3121828532-81" data-test-id="code-content" role="text">git reset --mixed HEAD~3<br/><br/><strong>2.處理掉大檔案</strong><br/></code></p>
+<p class="ng-tns-c3121828532-81"><strong><code _ngcontent-ng-c3121828532="" class="code-container formatted ng-tns-c3121828532-81" data-test-id="code-content" role="text">3.</code>重新提交並推送</strong></p>
+<p class="ng-tns-c3121828532-81"><code _ngcontent-ng-c3121828532="" class="code-container formatted ng-tns-c3121828532-81" data-test-id="code-content" role="text"><strong><response-element class="" ng-version="0.0.0-PLACEHOLDER"><code-block _nghost-ng-c3121828532="" class="ng-tns-c3121828532-83 ng-star-inserted"></code-block></response-element></strong></code></p>
+<div _ngcontent-ng-c3121828532="" class="code-block ng-tns-c3121828532-83 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation" data-hveid="0" data-ved="0CAAQhtANahgKEwiqg-W8uduRAxUAAAAAHQAAAAAQuQE" decode-data-ved="1" jslog='223238;track:impression,attention;BardVeMetadataKey:[["r_2f4d360bd96ba503","c_b9a7ab9335adfa33",null,"rc_3a865f534414250f",null,null,"zh-Hant",null,1,null,null,1,0]]'>
+<div _ngcontent-ng-c3121828532="" class="code-block-decoration header-formatted gds-title-s ng-tns-c3121828532-83 ng-star-inserted"><code _ngcontent-ng-c3121828532="" class="code-container formatted ng-tns-c3121828532-81" data-test-id="code-content" role="text"><strong><span _ngcontent-ng-c3121828532="" class="ng-tns-c3121828532-83"></span></strong></code></div>
+<div _ngcontent-ng-c3121828532="" class="formatted-code-block-internal-container ng-tns-c3121828532-83">
+<div _ngcontent-ng-c3121828532="" class="animated-opacity ng-tns-c3121828532-83">
+<pre _ngcontent-ng-c3121828532="" class="ng-tns-c3121828532-83"><code _ngcontent-ng-c3121828532="" class="code-container formatted ng-tns-c3121828532-81" data-test-id="code-content" role="text"><code _ngcontent-ng-c3121828532="" class="code-container formatted ng-tns-c3121828532-83" data-test-id="code-content" role="text">git add .
+git commit -m <span class="hljs-string">"修正：移除超大影片檔案並更新資料"</span>
+git push origin main</code></code></pre>
+</div>
+</div>
+</div>
+<code _ngcontent-ng-c3121828532="" class="code-container formatted ng-tns-c3121828532-81" data-test-id="code-content" role="text"><strong></strong></code>
+<p></p>
+</div>
+</div>
+</div>
+<p></p>
