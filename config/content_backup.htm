@@ -169,7 +169,7 @@
 <p><strong>link4</strong></p>
 <p><a href="https://youtu.be/4g1QJX6JQLc">https://youtu.be/4g1QJX6JQLc</a></p>
 <p></p>
-<p><strong>draw apple</strong></p>
+<h2><strong>draw apple</strong></h2>
 <p>無法導入</p>
 <p>出現</p>
 <p>WARNING: Robot "robot" &gt; HingeJoint "link1" &gt; Solid "link1" &gt; DEF joint2 HingeJoint &gt; Solid "solid" &gt; DEF joint3 HingeJoint &gt; Solid "link3": Webots has detected that this solid is light and oblong according to its inertia matrix. This belongs in the physics edge cases, and can imply weird physical results. Increasing the weight of the object or reducing its eccentricity are recommended.<br/>WARNING: Robot "robot" &gt; HingeJoint "link1" &gt; Solid "link1" &gt; DEF joint2 HingeJoint &gt; Solid "solid": Webots has detected that this solid is light and oblong according to its inertia matrix. This belongs in the physics edge cases, and can imply weird physical results. Increasing the weight of the object or reducing its eccentricity are recommended.<br/>WARNING: Robot "robot" &gt; HingeJoint "link1" &gt; Solid "link1": Webots has detected that this solid is light and oblong according to its inertia matrix. This belongs in the physics edge cases, and can imply weird physical results. Increasing the weight of the object or reducing its eccentricity are recommended.<br/>WARNING: Robot "robot" &gt; DEF joint5 HingeJoint &gt; DEF link4 Solid: Webots has detected that this solid is light and oblong according to its inertia matrix. This belongs in the physics edge cases, and can imply weird physical results. Increasing the weight of the object or reducing its eccentricity are recommended.<br/>INFO: draw_apple: Starting controller: python.exe -u draw_apple.py<br/>Traceback (most recent call last):<br/> File "C:\Users\vivi2\OneDrive\桌面\電腦\controllers\draw_apple\draw_apple.py", line 4, in &lt;module&gt;<br/> import cv2<br/>ModuleNotFoundError: No module named 'cv2'<br/>WARNING: 'draw_apple' controller exited with status: 1.<br/><br/>問題總結</p>
@@ -228,19 +228,58 @@
 <p data-path-to-node="13,1,0"><b data-index-in-node="0" data-path-to-node="13,1,0">建議：</b> 穩定後建議將專案移至非同步資料夾（例如 <code data-index-in-node="24" data-path-to-node="13,1,0">C:\Webots_Projects\</code>）。</p>
 </li>
 </ul>
-<hr data-path-to-node="14"/>
-<p data-path-to-node="15"><b data-index-in-node="0" data-path-to-node="15">總結建議操作順序：</b></p>
-<ol data-path-to-node="16" start="1">
+<h3><strong>已做過的解決方法</strong></h3>
+<p data-path-to-node="3">一、 針對 OpenCV (cv2) 安裝的嘗試</p>
+<p data-path-to-node="4">這是為了解決 <code data-index-in-node="7" data-path-to-node="4">import cv2</code> 失敗的問題，你嘗試了多種繞過網路限制的方法：</p>
+<ul data-path-to-node="5">
 <li>
-<p data-path-to-node="16,0,0"><b data-index-in-node="0" data-path-to-node="16,0,0">優先解決 OpenCV 安裝問題</b>（這是目前程式動不起來的主因）。</p>
+<p data-path-to-node="5,0,0"><b data-index-in-node="0" data-path-to-node="5,0,0">標準指令安裝：</b> 嘗試在 Anaconda (base) 環境下執行 <code data-index-in-node="34" data-path-to-node="5,0,0">pip install opencv-python</code>，但被 Proxy 攔截。</p>
 </li>
 <li>
-<p data-path-to-node="16,1,0">安裝成功後，點擊 Webots 的 <b data-index-in-node="18" data-path-to-node="16,1,0">Reload</b> 重新執行。</p>
+<p data-path-to-node="5,1,0"><b data-index-in-node="0" data-path-to-node="5,1,0">手動觸發認證視窗：</b></p>
+<ul data-path-to-node="5,1,1">
+<li>
+<p data-path-to-node="5,1,1,0,0">嘗試透過指令引發 <b data-index-in-node="9" data-path-to-node="5,1,1,0,0">Windows 安全性驗證</b> 視窗來輸入帳號密碼。</p>
 </li>
 <li>
-<p data-path-to-node="16,2,0">如果機器人動起來後會抖動，再去調整 <b data-index-in-node="18" data-path-to-node="16,2,0">Solid</b> 節點裡的物理參數。</p>
+<p data-path-to-node="5,1,1,1,0">使用 <b data-index-in-node="3" data-path-to-node="5,1,1,1,0">PowerShell 指令</b> (<code data-index-in-node="18" data-path-to-node="5,1,1,1,0">Get-Credential</code>) 試圖強行叫出登入框。</p>
 </li>
-</ol>
+</ul>
+</li>
+<li>
+<p data-path-to-node="5,2,0"><b data-index-in-node="0" data-path-to-node="5,2,0">清除網路快取與環境變數：</b></p>
+<ul data-path-to-node="5,2,1">
+<li>
+<p data-path-to-node="5,2,1,0,0">使用 <code data-index-in-node="3" data-path-to-node="5,2,1,0,0">set http_proxy=</code> 等指令清空視窗內的代理設定。</p>
+</li>
+<li>
+<p data-path-to-node="5,2,1,1,0">使用 <code data-index-in-node="3" data-path-to-node="5,2,1,1,0">pip config list --debug</code> 追蹤隱藏在 <code data-index-in-node="33" data-path-to-node="5,2,1,1,0">Y:\miniconda3\pip.ini</code> 等路徑下的設定檔。</p>
+</li>
+<li>
+<p data-path-to-node="5,2,1,2,0">嘗試執行 <code data-index-in-node="5" data-path-to-node="5,2,1,2,0">pip config unset</code> 想要挖掉寫死的 Proxy 位址。</p>
+</li>
+</ul>
+</li>
+<li>
+<p data-path-to-node="5,3,0"><b data-index-in-node="0" data-path-to-node="5,3,0">隔離環境安裝：</b> 使用 <code data-index-in-node="11" data-path-to-node="5,3,0">pip --isolated</code> 試圖無視所有設定檔進行安裝。</p>
+</li>
+<li>
+<p data-path-to-node="5,4,0"><b data-index-in-node="0" data-path-to-node="5,4,0">切換物理網路：</b> 為了避開學校 Proxy，你切換到了 <b data-index-in-node="27" data-path-to-node="5,4,0">手機熱點</b>，並嘗試在無 Proxy 環境下安裝。</p>
+</li>
+</ul>
+<p data-path-to-node="6">二、 針對系統環境的檢查</p>
+<ul data-path-to-node="7">
+<li>
+<p data-path-to-node="7,0,0"><b data-index-in-node="0" data-path-to-node="7,0,0">查詢系統代理：</b> 使用 <code data-index-in-node="11" data-path-to-node="7,0,0">netsh winhttp show proxy</code> 確認系統層級是否開啟代理。</p>
+</li>
+<li>
+<p data-path-to-node="7,1,0"><b data-index-in-node="0" data-path-to-node="7,1,0">解析 PAC 腳本：</b> 發現並讀取了 <code data-index-in-node="18" data-path-to-node="7,1,0">http://127.0.0.1:50552/proxy.pac</code>，確認了電腦後台有軟體在劫持網路流量。</p>
+</li>
+<li>
+<p data-path-to-node="7,2,0"><b data-index-in-node="0" data-path-to-node="7,2,0">檢查認證管理員：</b> 確認 Windows 是否有存入錯誤的舊密碼導致無法彈出輸入框。</p>
+</li>
+</ul>
+<p>仍無法解決。</p>
 </div>
 <h1>github無法推上雲端</h1>
 <p>On branch main<br/>Your branch is ahead of 'origin/main' by 3 commits.<br/>  (use "git push" to publish your local commits)</p>
