@@ -169,7 +169,18 @@
 <p><strong>link4</strong></p>
 <p><a href="https://youtu.be/4g1QJX6JQLc">https://youtu.be/4g1QJX6JQLc</a></p>
 <p></p>
-<h2><strong>draw apple(failed)</strong></h2>
+<p><strong>draw apple 剩下的步驟(用敘述的方式來完成</strong></p>
+<ol>
+<li>從電腦把draw_apple檔案移至controller資料夾下</li>
+<li><img alt="" height="431" src="/images/螢幕擷取畫面 2025-12-29 020539.png" width="330"/>把controllerc匯入draw_apple。supervisor的true打勾</li>
+<li>
+<p>存檔，Reload word。無法正常跑動，檢查問題</p>
+</li>
+<li>補link4 Solid下的physics NULL，add <span>physics<img alt="" height="275" src="/images/螢幕擷取畫面 2025-12-29 021556.png" width="334"/></span></li>
+<li>打開draw_apple.py檔<img alt="" height="715" src="/images/螢幕擷取畫面 2025-12-29 021804.png" width="512"/></li>
+<li></li>
+</ol>
+<h2><span> draw applr(failed)</span></h2>
 <p>無法導入:</p>
 <p><a href="https://youtu.be/XpKkgpADx6Y">https://youtu.be/XpKkgpADx6Y</a></p>
 <p>出現</p>
@@ -281,11 +292,7 @@
 </li>
 </ul>
 <p>仍無法解決。</p>
-<p></p>
-<p><strong>draw apple 剩下的步驟(用敘述的方式來完成</strong></p>
-<ol>
-<li style="text-align: left;"></li>
-</ol>
+<p># ----------------- 蘋果輪廓處理 -----------------<br/>def load_apple_points(image_path, N_points=100):<br/> img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)<br/> if img is None:<br/> print<span style="background-color: #ff0000;">(f"Error: 無法讀取圖片 {image_path}")</span><br/> exit(1)<br/> _, binary = cv2.threshold(img, 200, 255, cv2.THRESH_BINARY_INV)<br/> contours, _ = cv2.findContours(binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)<br/> if not contours:<br/> print("Error:<span style="background-color: #ff0000;"> 找不到輪廓"</span>)<br/> exit(1)<br/> main_contour = max(contours, key=cv2.contourArea)<br/> if len(main_contour) &gt; N_points:<br/> indices = np.linspace(0, len(main_contour) - 1, N_points, dtype=int)<br/> sampled = main_contour[indices]<br/> else:<br/> sampled = main_contour<br/> pts = sampled[:, 0, :]<br/> h, w = binary.shape<br/> pts[:, 1] = h - pts[:, 1]<br/> center = np.mean(pts, axis=0)<br/> pts_centered = pts - center<br/> scale = np.max(np.linalg.norm(pts_centered, axis=1))<br/> pts_normalized = pts_centered / scale<br/> pts_scaled = pts_normalized * target_radius + target_center<br/> return pts_scaled</p>
 </div>
 <h1>github無法推上雲端</h1>
 <p>On branch main<br/>Your branch is ahead of 'origin/main' by 3 commits.<br/>  (use "git push" to publish your local commits)</p>
