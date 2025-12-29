@@ -142,21 +142,14 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">teams上解決辦法 << <a href='teams上解決辦法.html'>Previous</a> <a href='1. 透過 Windows 設定強制指定 GPU.html'>Next</a> >> 1. 透過 Windows 設定強制指定 GPU<br /><h1>第二次錯誤</h1>
-<p _ngcontent-ng-c4040723033="" class="query-text-line ng-star-inserted">Critical: Failed to load opengl32sw (?曆??唳?摰?璅∠???</p>
-<p _ngcontent-ng-c4040723033="" class="query-text-line ng-star-inserted">Warning: Failed to load and resolve WGL/OpenGL functions</p>
-<p _ngcontent-ng-c4040723033="" class="query-text-line ng-star-inserted">FATAL: Webots could not initialize the rendering system.</p>
-<p _ngcontent-ng-c4040723033="" class="query-text-line ng-star-inserted">Please check your GPU abilities and install the latest graphics drivers.</p>
-<p _ngcontent-ng-c4040723033="" class="query-text-line ng-star-inserted">Please do also check that your graphics hardware meets the requirements specified in the User Guide.</p>
-<p _ngcontent-ng-c4040723033="" class="query-text-line ng-star-inserted">Warning: QWaitCondition: Destroyed while threads are still waiting<br/><br/></p>
-<blockquote>
-<p _ngcontent-ng-c4040723033="" class="query-text-line ng-star-inserted"><strong>AI問題解決辦法:</strong></p>
-</blockquote>
-<div _ngcontent-ng-c411344654="" aria-busy="false" aria-live="off" class="markdown markdown-main-panel stronger enable-updated-hr-color" dir="ltr" id="model-response-message-contentr_36b1f2b8d7cec7b8" inline-copy-host="">
-<p data-path-to-node="0">既然你的筆電配備了 <b data-index-in-node="10" data-path-to-node="0">NVIDIA GeForce MX350</b> 獨立顯示卡，那麼解決這個問題的關鍵就在於：<b data-index-in-node="52" data-path-to-node="0">「強制讓 Webots 使用 NVIDIA 顯卡運作，而不是預設的 Intel 內顯。」</b></p>
-<p data-path-to-node="1">目前的錯誤訊息是因為 Webots 嘗試調用 Intel 內顯的 OpenGL 失敗，且系統找不到軟體渲染（opengl32sw）的備援。以下是針對 MX350 筆電的具體解決方案：</p>
-<hr data-path-to-node="2"/>
-<br />teams上解決辦法 << <a href='teams上解決辦法.html'>Previous</a> <a href='1. 透過 Windows 設定強制指定 GPU.html'>Next</a> >> 1. 透過 Windows 設定強制指定 GPU</div>
+    <div id="tipue_search_content">已做過的解決方法 << <a href='已做過的解決方法.html'>Previous</a> <a href='github無法推上雲端.html'>Next</a> >> github無法推上雲端<br /><h1>心得</h1>
+<p data-end="158" data-start="63">本次實作使用 Webots 機器人模擬平台，讓機器人能夠讀取既有影像資料，並依據影像資訊在虛擬畫板上描繪指定圖形，藉此熟悉 Webots 的模擬環境架構、控制器執行方式，以及機器人動作流程。</p>
+<p data-end="293" data-start="160">實作過程中，首先遇到 Webots 渲染系統無法啟動的問題，起因於顯示卡驅動與 OpenGL 相容性不足，導致模擬畫面無法正常顯示。透過調整系統圖形設定並更新顯示卡驅動後，成功啟動 Webots 模擬環境，並對 Webots 對硬體與圖形環境的需求有更進一步的理解。</p>
+<p data-end="389" data-start="295">其次，在執行機器人控制程式時，發現控制器的工作目錄與程式檔案路徑之間存在差異，造成外部資料無法正確讀取。經過路徑設定的調整後，對 Webots 控制器的執行邏輯與檔案結構有了更清楚的認識。</p>
+<p data-end="512" data-start="391">在後續實作中，雖然最終仍未能成功將蘋果圖形完整導入並實際繪製，但我仍依照教學流程，將相關教學影片完整觀看，並逐步整理與理解每個操作步驟與控制邏輯。透過對照教學內容與實作過程，進一步釐清 Webots 中座標轉換、動作規劃與模擬控制之間的關係。</p>
+<p data-end="618" data-start="514">整體而言，本次實作雖未完全達成預期成果，但透過實際操作與問題排除的過程，使我更熟悉 Webots 模擬平台的操作方式與系統架構，也提升了我在模擬環境中進行機器人控制與學習新工具的能力，為後續相關實作奠定基礎。</p>
+</div>
+<br />已做過的解決方法 << <a href='已做過的解決方法.html'>Previous</a> <a href='github無法推上雲端.html'>Next</a> >> github無法推上雲端</div>
         
     <!-- footer -->
       <div class="container">
